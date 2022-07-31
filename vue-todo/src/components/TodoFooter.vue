@@ -7,12 +7,12 @@
 <script>
 export default {
   methods: {
-    clearTodo: function() {
+    clearTodo: function () {
       //this.$emit('clearAll');
-      this.$store.commit('clearAllItems');
-    }
-  }
-}
+      this.$store.commit("clearAllItems");
+    },
+  },
+};
 </script>
 
 <style scoped>

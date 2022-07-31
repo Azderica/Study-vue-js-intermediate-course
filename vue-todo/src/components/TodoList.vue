@@ -1,9 +1,19 @@
 <template>
   <section>
     <transition-group name="list" tag="ul">
-      <li v-for="(todoItem, index) in this.$store.state.todoItems" class="shadow" v-bind:key="todoItem.item">
-        <i class="checkBtn fas fa-check" v-bind:class="{checkBtnCompleted: todoItem.completed}" v-on:click="toggleComplete(todoItem, index)"></i>
-        <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
+      <li
+        v-for="(todoItem, index) in this.$store.state.todoItems"
+        class="shadow"
+        v-bind:key="todoItem.item"
+      >
+        <i
+          class="checkBtn fas fa-check"
+          v-bind:class="{ checkBtnCompleted: todoItem.completed }"
+          v-on:click="toggleComplete(todoItem, index)"
+        ></i>
+        <span v-bind:class="{ textCompleted: todoItem.completed }">{{
+          todoItem.item
+        }}</span>
         <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
           <i class="removeBtn fas fa-trash-alt"></i>
         </span>
@@ -14,18 +24,18 @@
 
 <script>
 export default {
-  props: ['propsdata'],
+  props: ["propsdata"],
   methods: {
-    removeTodo: function(todoItem, index) {
+    removeTodo: function (todoItem, index) {
       //this.$emit('removeItem', todoItem, index);
-      this.$store.commit('removeOneItem', {todoItem, index});
+      this.$store.commit("removeOneItem", { todoItem, index });
     },
-    toggleComplete: function(todoItem, index) {
-      //this.$emit('toggleItem', todoItem, index); 
-      this.$store.commit('toggleOneItem', {todoItem, index});
-    }
-  }
-}
+    toggleComplete: function (todoItem, index) {
+      //this.$emit('toggleItem', todoItem, index);
+      this.$store.commit("toggleOneItem", { todoItem, index });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -63,7 +73,8 @@ li {
 }
 
 /* transition css */
-.list-enter-active, .list-leave-active {
+.list-enter-active,
+.list-leave-active {
   transition: all 1s;
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
