@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TodoHeader></TodoHeader> 
+    <TodoHeader></TodoHeader>
     <TodoInput></TodoInput>
     <TodoList></TodoList>
     <TodoFooter></TodoFooter>
@@ -11,22 +11,29 @@
 import TodoHeader from './components/TodoHeader.vue'
 import TodoInput from './components/TodoInput.vue'
 import TodoList from './components/TodoList.vue'
-import TodoFooter from './components/TodoFooter.vue';
+import TodoFooter from './components/TodoFooter.vue'
 
 export default {
+  data: function() {
+    return {
+      todoItems: []
+    }
+  },
+  methods: {
+  },
   components: {
-    "TodoHeader": TodoHeader,
-    "TodoInput": TodoInput,
-    "TodoList": TodoList,
-    "TodoFooter": TodoFooter,
-  } 
+    TodoHeader: TodoHeader,
+    TodoInput: TodoInput,
+    TodoList: TodoList,
+    TodoFooter: TodoFooter
+  }  
 }
 </script>
 
 <style>
 body {
   text-align: center;
-  background-color: #F6F6F6;
+  background-color: #F6F6F8;
 }
 input {
   border-style: groove;
@@ -36,6 +43,6 @@ button {
   border-style: groove;
 }
 .shadow {
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03)
 }
 </style>
